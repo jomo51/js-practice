@@ -41,9 +41,5 @@ const people = [
 ];
 
 people.forEach((person) => {
-  console.log(person.name);
-  console.log(person.age);
-  console.log(person.gender);
-  
   introduce(person.name,person.age,person.gender);
 })
