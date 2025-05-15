@@ -14,7 +14,7 @@ Object.entries(employeesSummary).forEach(([key,value]) => {
   console.log(`🔻${key}`);
   console.log(`人数: ${value.peopleCnt}`);
   console.log(`平均年齢: ${value.averageAge}`);
-  console.log(`名前一覧: ${value.peopleNames}`);
+  console.log(`名前一覧: ${value.peopleNames.join(', ')}`);
   console.log('');
 });
 
@@ -26,14 +26,14 @@ function GetEmployeeSummary(employeesData) {
   return ({
     males: getSummary(males),
     females: getSummary(females)
-  })
+  });
 }
 
 //集計する関数
 function getSummary(genderDatas){
   return ({
     peopleCnt :
-      genderDatas.reduce((sum , genderData) => sum + 1,0),
+      genderDatas.length,
     averageAge :
       genderDatas.reduce((sum, genderData) => sum + genderData.age,0) / genderDatas.length,
     peopleNames :
