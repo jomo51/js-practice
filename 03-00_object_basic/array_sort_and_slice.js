@@ -8,13 +8,11 @@ const players = [
 
 const scoreDescPlayers = players.sort((a,b) => b.score - a.score);
 
-let rank = 0;
 const top3Players = players
   .sort((a,b) => b.score - a.score)
   .slice(0,3)
-  .map((player) => {
-    rank++;
-    return `${rank}位:${player.name} (${player.score}点)`;
+  .map((player,index) => {
+    return `${index + 1}位:${player.name} (${player.score}点)`;
   });
 
 top3Players.forEach(player => console.log(player));
