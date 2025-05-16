@@ -2,7 +2,7 @@ function sendCustomMessage(user) {
   console.log(this.prefix + user + 'へ特別メッセージ');
 }
 
-const notifer = {
+const notifier = {
   prefix:'From ',
   users:['jomo','オペ子','AI'],
 
@@ -20,12 +20,12 @@ const notifer = {
   }
 };
 
-notifer.sendAll();
-notifer.customSend('jom');
+notifier.sendAll();
+notifier.customSend('jom');
 
 //外部にわたす
-const send = notifer.customSend.bind(notifer);
+const send = notifier.customSend.bind(notifier);
 send('オペ子');
 
 //即時実行
-sendCustomMessage.call(notifer,'immediate');
+sendCustomMessage.call(notifier,'immediate');
