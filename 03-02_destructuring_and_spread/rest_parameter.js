@@ -27,7 +27,7 @@ user_fuj.nameDisply();
 
 //furits配列
 const fruits = ['apple','banana','orange'];
-
+//お題
 const [firstFruit,...otherFruits] = fruits;
 console.log(firstFruit);
 console.log(otherFruits);
